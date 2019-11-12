@@ -13,6 +13,9 @@ import java.util.concurrent.TimeUnit;
  */
 public class App extends BasePage {
 
+    /**
+     * App启动
+     */
     public static void start() throws MalformedURLException {
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
         desiredCapabilities.setCapability("platformName", "android");
@@ -28,11 +31,22 @@ public class App extends BasePage {
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
     }
 
-    //进入搜索页
+    /**
+     * 进入搜索页
+     */
     public static SearchPage toSearch() {
         //首页搜索入口
         click(By.id("com.xueqiu.android:id/home_search"));
         //返回搜索页
         return new SearchPage();
+    }
+
+    /**
+     * 进入自选股页
+     */
+    public static StockPage toStocks() {
+        //通过xpath找到自选股页面
+        click(By.xpath("//*[contains(@resource-id,'tab_name') and @text='自选']"));
+        return new StockPage();
     }
 }

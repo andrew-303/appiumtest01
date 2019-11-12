@@ -41,4 +41,11 @@ public class SearchPage extends BasePage{
         return new App();
     }
 
+    /**
+     * 将搜索的股票加入自选
+     */
+    public SearchPage select() {
+        click(By.id("com.xueqiu.android:id/follow_btn"));
+        return this;
+    }
 }

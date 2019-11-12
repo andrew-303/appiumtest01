@@ -6,6 +6,8 @@ import io.appium.java_client.touch.offset.PointOption;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebElement;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +17,7 @@ import java.util.concurrent.TimeUnit;
  * 基础页面
  */
 public class BasePage {
+    private static Logger logger = LoggerFactory.getLogger(BasePage.class);
     /**
      * 定义driver
      */
@@ -28,7 +31,8 @@ public class BasePage {
     public static WebElement findElement(By by) {
         //todo:递归是更好的方法
         //todo:如果定位的元素是动态变化位置
-        System.out.println("待查找的元素是："+ by);
+        //System.out.println("待查找的元素是："+ by);
+        logger.info("待查找的元素是："+ by);
         try {
             return driver.findElement(by);
         } catch (Exception e) {
@@ -43,7 +47,8 @@ public class BasePage {
      */
     public static void click(By by) {
         //todo: 递归是更好的
-        System.out.println("点击元素："+by);
+        //System.out.println("点击元素："+by);
+        logger.info("点击元素："+by);
         try {
             driver.findElement(by).click();
         } catch (Exception e) {
@@ -58,14 +63,15 @@ public class BasePage {
      * 查找元素列表
      */
     public static List<WebElement> findElements(By by) {
-        System.out.println("待查找的元素列表：" + by);
+        //System.out.println("待查找的元素列表：" + by);
+        logger.info("待查找的元素列表：" + by);
         return driver.findElements(by);
     }
 
     /**
      * 处理弹窗
      */
-    private static void handleAlert() {
+    static void handleAlert() {
         //现将预知可能出现的弹窗，加入到数组列表中
         List<By> alertBoxs = new ArrayList<By>();
         alertBoxs.add(By.id("com.xueqiu.android:id/image_cancel"));

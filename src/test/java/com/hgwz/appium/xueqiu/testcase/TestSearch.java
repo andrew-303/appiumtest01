@@ -37,7 +37,7 @@ public class TestSearch {
     }
 
     /**
-     * 用Junit5完成参数化,参数为：股票名称、股价
+     * 用Junit4完成参数化,参数为：股票名称、股价
      */
     @Parameterized.Parameters
     public static Collection<Object[]> data() {
