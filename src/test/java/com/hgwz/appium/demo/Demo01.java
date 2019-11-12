@@ -36,7 +36,7 @@ public class Demo01 {
         MobileElement el1 = (MobileElement) driver.findElementById("com.xueqiu.android:id/home_search");
         el1.click();
         MobileElement el2 = (MobileElement) driver.findElementById("com.xueqiu.android:id/search_input_text");
-        el2.sendKeys("亿阳信通");
+        el2.sendKeys("alibaba");
         MobileElement el3 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/android.widget.RelativeLayout[1]/android.widget.LinearLayout/android.widget.TextView[1]");
         el3.click();
         MobileElement el4 = (MobileElement) driver.findElementById("com.xueqiu.android:id/current_price");

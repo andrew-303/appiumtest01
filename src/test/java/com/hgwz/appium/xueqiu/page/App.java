@@ -1,6 +1,7 @@
 package com.hgwz.appium.xueqiu.page;
 
 import io.appium.java_client.android.AndroidDriver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.net.MalformedURLException;
@@ -25,5 +26,13 @@ public class App extends BasePage {
         driver = new AndroidDriver(remoteUrl, desiredCapabilities);
         //隐式等待
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+    }
+
+    //进入搜索页
+    public static SearchPage toSearch() {
+        //首页搜索入口
+        click(By.id("com.xueqiu.android:id/home_search"));
+        //返回搜索页
+        return new SearchPage();
     }
 }
